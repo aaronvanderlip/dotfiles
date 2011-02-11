@@ -30,20 +30,22 @@
 "
 " -----------------------------------------------------------------
 
+call pathogen#runtime_append_all_bundles()
 set showcmd
+set showmatch "show matching brackets
 set nocompatible
 set ignorecase smartcase
 set title
 set scrolloff=3
+set number
 "turn of folding
 set foldlevel=100
-syntax on
-set number
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 set autoindent
 set smartindent
 set ruler
 
+syntax on
 
 "Spelling
 map <silent> <leader>s :set spell!<CR>
@@ -56,6 +58,8 @@ highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
 " Enhanced command menu ctrl + d to expand directories
 set wildmenu
 set wildignore+=*.pyc,*.pyo,CVS,.svn,.git,*.mo,.DS_Store,*.pt.cache,*.Python,*.o,*.lo,*.la,*~
+set wildmode=list:longest
+
 
 " set all window splits equal
 set equalalways
@@ -77,7 +81,6 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 "invisibles
 nmap <silent> <leader>i :set nolist!<CR>
 
-"remove white
 
 " set up jj as mode switch
 map! jj <ESC>
@@ -132,19 +135,31 @@ map <silent> <leader>h :set hlsearch!<CR>
 " -----------------------------------------------------------------
 " Colors and Syntax
 " -----------------------------------------------------------------
-" turn on syntax highlighting
-syntax on
  
 " gui and terminal compatible color scheme
 set background=dark
- 
-
+colorscheme desert
 
 "file handling
 filetype on
 filetype plugin indent on
+syntax on
+
+
+"Ever notice a slight lag after typing the leader key + command? This lowers  
+""the timeout.  
+set timeoutlen=500 
+
+"Switch between buffers without saving  
+set hidden  
+
+"Automatically change current directory to that of the file in the buffer  
+autocmd BufEnter * cd %:p:h
+
+
 setlocal omnifunc=syntaxcomplete#Complete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 "support for zcml
 autocmd BufRead,BufNewFile *.zcml :set ft=xml
 autocmd BufRead,BufNewFile *.py syntax on
@@ -230,3 +245,10 @@ if has("gui_running")
     endif
 endif
 
+
+
+"fix for copy/paste gvim
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa"
