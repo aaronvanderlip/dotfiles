@@ -140,6 +140,10 @@ set background=dark
  
 
 
+"pathogen
+call pathogen#runtime_append_all_bundles() 
+
+
 "file handling
 filetype on
 filetype plugin indent on
