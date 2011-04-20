@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/aaron/haybuildout/parts/communities/communities/sites/apps'
-let g:netrw_dirhist_2='/home/aaron/ghdonline-current/communities/sites/apps/community'
-let g:netrw_dirhist_3='/home/aaron/haybuildout/parts/communities/communities/sites/apps'
-let g:netrw_dirhist_4='/home/aaron/haybuildout/parts/communities/communities/endeca/external_data/pmc'
-let g:netrw_dirhist_5='/home/aaron/haybuildout/conf'
-let g:netrw_dirhist_6='/home/aaron/ghdonline-current/communities/endeca/webcrawl/conf'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/aaron/.subversion'
+let g:netrw_dirhist_2='/home/aaron/haybuildout/eggs/zc.recipe.egg-1.3.2-py2.6.egg/zc'
+let g:netrw_dirhist_3='/home/aaron/haybuildout/src/deployment/fabfiles'
+let g:netrw_dirhist_4='/home/aaron/.dotfiles/.vim/bundle/vim-colors-solarized'
+let g:netrw_dirhist_5='/home/aaron/haybuildout/src/deployment/conf/cron'
+let g:netrw_dirhist_6='/home/aaron/haybuildout/src/deployment/fabfiles'
+let g:netrw_dirhist_7='/home/aaron/virtualenvs/haystack/lib/python2.6/site-packages/fabric/contrib'
+let g:netrw_dirhist_8='/home/aaron/haybuildout/src/deployment/conf/cron'
