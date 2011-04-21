@@ -45,8 +45,6 @@ set autoindent
 set smartindent
 set ruler
 
-syntax on
-
 "Spelling
 map <silent> <leader>s :set spell!<CR>
 set spelllang=en_us
@@ -138,7 +136,11 @@ map <silent> <leader>h :set hlsearch!<CR>
  
 " gui and terminal compatible color scheme
 set background=dark
-colorscheme desert
+colorscheme solarized 
+se t_Co=16
+
+call pathogen#runtime_append_all_bundles() 
+
 
 "file handling
 filetype on
@@ -160,6 +162,9 @@ autocmd BufEnter * cd %:p:h
 setlocal omnifunc=syntaxcomplete#Complete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+
+autocmd BufRead,BufNewFile *.nxml :set ft=xml
+
 "support for zcml
 autocmd BufRead,BufNewFile *.zcml :set ft=xml
 autocmd BufRead,BufNewFile *.py syntax on
@@ -172,6 +177,9 @@ autocmd FileType * set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
 "autocmd FileType python compiler pylint
+
+"remove whitespace on save
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 " NERDTree settings
 " -----------------------------------------------------------------
