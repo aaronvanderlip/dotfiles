@@ -177,6 +177,8 @@ autocmd FileType * set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
 "autocmd FileType python compiler pylint
+
+"remove whitespace on save
 autocmd BufWritePre *.py :%s/\s\+$//e
 
 " NERDTree settings
