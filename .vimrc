@@ -45,6 +45,9 @@ set autoindent
 set smartindent
 set ruler
 
+"PEP
+let g:pep8_map='<leader>8'
+
 "Spelling
 map <silent> <leader>s :set spell!<CR>
 set spelllang=en_us
@@ -72,8 +75,6 @@ map ; :
 let mapleader = ","
 let g:mapleader = ","
 
-" set super tabe default completion type "
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 
 "invisibles
@@ -158,9 +159,14 @@ set hidden
 "Automatically change current directory to that of the file in the buffer  
 autocmd BufEnter * cd %:p:h
 
-
+au FileType python set omnifunc=pythoncomplete#Complete
 setlocal omnifunc=syntaxcomplete#Complete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" set super tab default completion type "
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+
 
 
 autocmd BufRead,BufNewFile *.nxml :set ft=xml
@@ -260,3 +266,17 @@ vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa"
+
+"virtual env
+py << EOF
+import os.path
+import sys
+import vim
+
+if 'VIRTUAL_ENV' is os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  sys.path.insert(0, project_base_dir)
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  excefile(active_this, dict(__file__=activate_this.py))
+EOF
+
