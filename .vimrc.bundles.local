@@ -1,0 +1,3 @@
+Bundle 'spf13/vim-autoclose'
+Plugin 'jmcantrell/vim-virtualenv'
+

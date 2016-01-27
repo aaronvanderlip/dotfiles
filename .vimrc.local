@@ -1,0 +1,44 @@
+set nofoldenable
+map <leader>x :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+set sessionoptions=blank,buffers,curdir,tabpages,winsize
+
+let mapleader = ","
+let g:mapleader = ","
+map <leader>x :NERDTreeToggle<CR>
+map <leader>b :NERDTreeFromBookmark<Space>
+set number
+set wrap linebreak textwidth=0
+
+let g:enable_numbers = 0
+let g:ctrlp_cmd = 'CtrlPBuffer'
+map <leader>t :CtrlPBuff<CR>
+map <leader>tf :FufFile<CR>
+
+let g:pymode_folding = 0
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_w = 1
+
+set pastetoggle=<leader>pp           " pastetoggle (sane indentation on pastes)
+let g:virtualenv_auto_activate = 1
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+set shell=/bin/zsh
+set pastetoggle=<leader>pp
+
+"tabs and spaces
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+
+map <leader>sc  :SyntasticCheck<CR>
