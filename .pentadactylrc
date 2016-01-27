@@ -1,6 +1,0 @@
-set guioptions+=mT
-inoremap <C-S-v> <S-Ins>
-tnoremap <C-S-v> i_<S-Ins>
-noremap <C-S-v> <S-Ins>
-cnoremap <C-S-v> <S-Ins>
-vnoremap <C-S-v> <S-Ins>
