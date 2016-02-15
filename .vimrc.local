@@ -15,6 +15,7 @@ map <leader>t :CtrlPBuff<CR>
 map <leader>tf :FufFile<CR>
 
 let g:pymode_folding = 0
+set nofoldenable
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
